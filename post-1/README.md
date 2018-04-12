@@ -1,4 +1,4 @@
-# Post 1
+# [Post 1] My First Vert.x Application
 
 Based on [My First Vert.x Application](https://developers.redhat.com/blog/2018/03/13/eclipse-vertx-first-application/) written by [Clement Escoffier ](https://developers.redhat.com/blog/author/cescoffier/).
 
@@ -109,7 +109,7 @@ Content-Length: 47
 
 ## Unit testing
 
-We will create the verticle in `src/test/java/io/vertx/intro/first/MyFirstVerticleTest.java` file with this content:
+We will create the test class in `src/test/java/io/vertx/intro/first/MyFirstVerticleTest.java` file with this content:
 
 ```text
 package io.vertx.intro.first;
