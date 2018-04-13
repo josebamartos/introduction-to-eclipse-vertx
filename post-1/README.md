@@ -57,23 +57,19 @@ We will create the verticle in `src/main/java/io/vertx/intro/first/MyFirstVertic
 
 ```java
 package io.vertx.intro.first;
- 
+
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
- 
+
 public class MyFirstVerticle extends AbstractVerticle {
- 
+    
     @Override
-    public void start(Future fut) {
+    public void start(Future<Void> fut) {
         vertx
             .createHttpServer()
-            .requestHandler(r -&gt;
-                r.response()
-                 .end("
-<h1>Hello from my first Vert.x application</h1>
- 
-"))
-            .listen(8080, result -&gt; {
+            .requestHandler(r ->
+                r.response().end("<h1>Hello from my first Vert.x application</h1>"))
+            .listen(8080, result -> {
                 if (result.succeeded()) {
                     fut.complete();
                 } else {
@@ -111,7 +107,7 @@ Content-Length: 47
 
 We will create the test class in `src/test/java/io/vertx/intro/first/MyFirstVerticleTest.java` file with this content:
 
-```text
+```java
 package io.vertx.intro.first;
  
 import io.vertx.core.Vertx;
@@ -131,8 +127,7 @@ public class MyFirstVerticleTest {
     @Before
     public void setUp(TestContext context) {
         vertx = Vertx.vertx();
-        vertx.deployVerticle(MyFirstVerticle.class.getName(),
-            context.asyncAssertSuccess());
+        vertx.deployVerticle(MyFirstVerticle.class.getName(), context.asyncAssertSuccess());
     }
  
     @After
