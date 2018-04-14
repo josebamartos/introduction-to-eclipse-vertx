@@ -1,6 +1,6 @@
 # [Post 2] Eclipse Vert.x Application Configuration
 
-Based on [Eclipse Vert.x Application Configuration](https://developers.redhat.com/blog/2018/03/22/eclipse-vert-x-application-configuration/).
+Based on [Eclipse Vert.x Application Configuration](https://developers.redhat.com/blog/2018/03/22/eclipse-vert-x-application-configuration/) written by [Clement Escoffier](https://developers.redhat.com/blog/author/cescoffier/).
 
 All the exercises are supossing that their root directory is `post-2`.
 
@@ -18,7 +18,6 @@ But here in `post-2`, we will use the `conf` object that extends `JsonObject`cla
 ```java
 .listen(config().getInteger("HTTP_PORT", 8080), result -> {
 ```
-
 
 The first step is to modify the io.vertx.intro.first.MyFirstVerticle class to not bind to the port 8080, but to read it from the configuration:
 
